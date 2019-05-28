@@ -730,117 +730,137 @@ weights, etc., are missing/null.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="econtools.metrics.core.Results.Ftest">
-<code class="descclassname">Results.</code><code class="descname">Ftest</code><span class="sig-paren">(</span><em>col_names</em>, <em>equal=False</em><span class="sig-paren">)</span><a class="headerlink" href="#econtools.metrics.core.Results.Ftest" title="Permalink to this definition">¶</a></dt>
-<dd><p>F test using regression results.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>col_names</strong> (<em>str</em><em> or </em><em>list</em>) – Regressor name(s) to test.</p>
-</dd>
-<dt class="field-even">Keyword Arguments</dt>
-<dd class="field-even"><p><strong>equal</strong> (<em>bool</em>) – Defaults to False. If True, test if all coefficients
-in <code class="docutils literal notranslate"><span class="pre">col_names</span></code> are equal. If False, test if <code class="docutils literal notranslate"><span class="pre">col_names</span></code> are
-jointly significant.</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><dl class="simple">
-<dt>A tuple containing:</dt><dd><ul class="simple">
-<li><p><strong>F</strong> (float): F-stat.</p></li>
-<li><p><strong>pF</strong> (float): p-score for <code class="docutils literal notranslate"><span class="pre">F</span></code>.</p></li>
-</ul>
-</dd>
+    <dt id="econtools.metrics.core.Results.Ftest">
+    <code class="descclassname">Results.</code><code class="descname">Ftest</code><span class="sig-paren">(</span><em>col_names</em>, <em>equal=False</em><span class="sig-paren">)</span><a class="headerlink" href="#econtools.metrics.core.Results.Ftest" title="Permalink to this definition">¶</a></dt>
+    <dd><p>F test using regression results.</p>
+        <dl class="field-list simple">
+            <dt class="field-odd">Parameters</dt>
+                <dd class="field-odd"><p><strong>col_names</strong> (<em>str</em><em> or </em><em>list</em>) – Regressor name(s) to test.</p></dd>
+            <dt class="field-even">Keyword Arguments</dt>
+                <dd class="field-even"><p><strong>equal</strong> (<em>bool</em>) – Defaults to False. If True, test if all coefficients in <code class="docutils literal notranslate"><span class="pre">col_names</span></code> are equal. If False, test if <code class="docutils literal notranslate"><span class="pre">col_names</span></code> are jointly significant.</p>
+                </dd>
+            <dt class="field-odd">Returns</dt>
+                <dd class="field-odd">
+                    <p>
+                    <dl class="simple">
+                    A tuple containing:
+                    <ul class="simple">
+                        <li><strong>F</strong> (float): F-stat.</li>
+                        <li><strong>pF</strong> (float): p-score for <code class="docutils literal notranslate"><span class="pre">F</span></code>.</li>
+                    </ul>
+                    </p>
+                </dd>
+            <dt class="field-even">Return type</dt>
+            <dd class="field-even"><p>tuple</p></dd>
+        </dl>
+    </dd>
 </dl>
-</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>tuple</p>
-</dd>
-</dl>
-</dd></dl>
 
 <dl class="function">
-<dt id="econtools.metrics.f_test">
-<code class="descclassname">econtools.metrics.</code><code class="descname">f_test</code><span class="sig-paren">(</span><em>V: numpy.ndarray</em>, <em>R: numpy.ndarray</em>, <em>beta: numpy.ndarray</em>, <em>r: int</em>, <em>df_d: int</em><span class="sig-paren">)</span> &#x2192; Tuple[float, float]<a class="headerlink" href="#econtools.metrics.f_test" title="Permalink to this definition">¶</a></dt>
-<dd><p>Arbitrary F test.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>V</strong> (<em>array</em>) – K-by-K variance-covariance matrix.</p></li>
-<li><p><strong>R</strong> (<em>array</em>) – K-by-K Test matrix.</p></li>
-<li><p><strong>beta</strong> (<em>array</em>) – Length-K vector of coefficient estimates.</p></li>
-<li><p><strong>r</strong> (<em>array</em>) – Length-K vector of null hypotheses.</p></li>
-<li><p><strong>df_d</strong> (<em>int</em>) – Denominator degrees of freedom.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>A tuple containing:</dt><dd><ul class="simple">
-<li><p><strong>F</strong> (float): F-stat.</p></li>
-<li><p><strong>pF</strong> (float): p-score for <code class="docutils literal notranslate"><span class="pre">F</span></code>.</p></li>
-</ul>
-</dd>
+    <dt id="econtools.metrics.f_test">
+    <code class="descclassname">econtools.metrics.</code><code class="descname">f_test</code><span class="sig-paren">(</span><em>V: numpy.ndarray</em>, <em>R: numpy.ndarray</em>, <em>beta: numpy.ndarray</em>, <em>r: int</em>, <em>df_d: int</em><span class="sig-paren">)</span> &#x2192; Tuple[float, float]<a class="headerlink" href="#econtools.metrics.f_test" title="Permalink to this definition">¶</a></dt>
+        <dd><p>Arbitrary F test.</p>
+            <dl class="field-list simple">
+                <dt class="field-odd">Parameters</dt>
+                    <dd class="field-odd"><ul class="simple">
+                    <li><p><strong>V</strong> (<em>array</em>) – K-by-K variance-covariance matrix.</p></li>
+                    <li><p><strong>R</strong> (<em>array</em>) – K-by-K Test matrix.</p></li>
+                    <li><p><strong>beta</strong> (<em>array</em>) – Length-K vector of coefficient estimates.</p></li>
+                    <li><p><strong>r</strong> (<em>array</em>) – Length-K vector of null hypotheses.</p></li>
+                    <li><p><strong>df_d</strong> (<em>int</em>) – Denominator degrees of freedom.</p></li>
+                    </ul>
+                    </dd>
+                <dt class="field-even">Returns</dt>
+                    <dd class="field-even">
+                    A tuple containing:
+                        <ul class="simple">
+                            <li><strong>F</strong> (float): F-stat.</li>
+                            <li><strong>pF</strong> (float): p-score for <code class="docutils literal notranslate"><span class="pre">F</span></code>.</li>
+                        </ul>
+                    </dd>
+                <dt class="field-odd">Return type</dt>
+                    <dd class="field-odd"><p>tuple</p>
+                </dd>
+            </dl>
+        </dd>
 </dl>
-</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>tuple</p>
-</dd>
-</dl>
-</dd></dl>
 
 <dl class="function">
 <dt id="econtools.metrics.kdensity">
-<code class="descclassname">econtools.metrics.</code><code class="descname">kdensity</code><span class="sig-paren">(</span><em>x: Union[numpy.ndarray, pandas.core.frame.DataFrame], x0: Union[float, numpy.ndarray, pandas.core.frame.DataFrame, None] = None, N: Optional[int] = None, h: Union[str, float, None] = None, wt: Union[numpy.ndarray, pandas.core.frame.DataFrame, None] = None, kernel: str = 'epan'</em><span class="sig-paren">)</span> &#x2192; Tuple[Union[numpy.ndarray, pandas.core.frame.DataFrame], numpy.ndarray, dict]<a class="headerlink" href="#econtools.metrics.kdensity" title="Permalink to this definition">¶</a></dt>
-<dd><p>Kernel density estimation.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>x</strong> (<em>array-like</em>) – Variable over which to estimate density.</p>
-</dd>
-<dt class="field-even">Keyword Arguments</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>x0</strong> (<em>float</em><em> or </em><em>array-like</em>) – Default <code class="docutils literal notranslate"><span class="pre">None</span></code>. Values at which to
-caluculate density. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, these values will be calculated
-automatically. Default length of <cite>x0</cite> is min([len(x), 50]).
-At least one of <code class="docutils literal notranslate"><span class="pre">x0</span></code> and <code class="docutils literal notranslate"><span class="pre">N</span></code> must be <code class="docutils literal notranslate"><span class="pre">None</span></code>.
-<code class="docutils literal notranslate"><span class="pre">x0</span></code> may also be a scalar.</p></li>
-<li><p><strong>N</strong> (<em>int</em>) – Default <code class="docutils literal notranslate"><span class="pre">None</span></code>. Number of <code class="docutils literal notranslate"><span class="pre">x0</span></code> values to calculate if
-<code class="docutils literal notranslate"><span class="pre">x0</span></code> is not specified. At least one of <code class="docutils literal notranslate"><span class="pre">x0</span></code> and <code class="docutils literal notranslate"><span class="pre">N</span></code> must be
-<code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>h</strong> (<em>str</em><em> or </em><em>float</em>) – Defaults to None (Silverman’s rule of thumb).
-Bandwidth for kernel. May pass a float or any of the following for
-Silverman’s rule of thumb: <code class="docutils literal notranslate"><span class="pre">'silverman'</span></code>, <code class="docutils literal notranslate"><span class="pre">'thumb'</span></code>, <code class="docutils literal notranslate"><span class="pre">'rot'</span></code>.</p></li>
-<li><p><strong>kernel</strong> (<em>str</em>) – <p>Type of kernel to be used. Options
-are:</p>
-<blockquote>
-<div><ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">'epan'</span></code>, Epanechnikov (default)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">'unif'</span></code>, Uniform</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">'tria'</span></code>, Triangle</p></li>
-</ul>
-</div></blockquote>
-</p></li>
-<li><p><strong>wt</strong> (<em>array-like</em>) – Weights. Must be same length as <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><dl class="simple">
-<dt>A tuple containing</dt><dd><ul class="simple">
-<li><p><strong>x0</strong> (<em>float or array</em>) - Points are which kernel is
-estimated. If <code class="docutils literal notranslate"><span class="pre">x0</span></code> is passed explicitly, this will be the
-same.</p></li>
-<li><p><strong>f_hat</strong> (<em>float or array</em>) - Estimated kernel density at
-point(s) <code class="docutils literal notranslate"><span class="pre">x0</span></code>.</p></li>
-<li><p><strong>est_stats</strong> (<em>dict</em>) - Contains bandwidth and kernel name.</p></li>
-</ul>
-</dd>
+    <code class="descclassname">econtools.metrics.</code><code class="descname">kdensity</code><span class="sig-paren">(</span><em>x: Union[numpy.ndarray, pandas.core.frame.DataFrame], x0: Union[float, numpy.ndarray, pandas.core.frame.DataFrame, None] = None, N: Optional[int] = None, h: Union[str, float, None] = None, wt: Union[numpy.ndarray, pandas.core.frame.DataFrame, None] = None, kernel: str = 'epan'</em><span class="sig-paren">)</span> &#x2192; Tuple[Union[numpy.ndarray, pandas.core.frame.DataFrame], numpy.ndarray, dict]<a class="headerlink" href="#econtools.metrics.kdensity" title="Permalink to this definition">¶</a>
+</dt>
+    <dd>
+        <p>Kernel density estimation.</p>
+        <dl class="field-list simple">
+            <dt class="field-odd">Parameters</dt>
+                <dd class="field-odd">
+                    <p><strong>x</strong> (<em>array-like</em>) – Variable over which to estimate density.</p>
+                </dd>
+            <dt class="field-even">Keyword Arguments</dt>
+                <dd class="field-even">
+                <ul class="simple">
+                    <li><p>
+                            <strong>x0</strong> (<em>float</em><em> or
+                            </em><em>array-like</em>) – Default <code
+                                class="docutils literal notranslate"><span
+                                class="pre">None</span></code>. Values at which to
+                        caluculate density. If <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+                        these values will be calculated automatically. Default
+                        length of <cite>x0</cite> is min([len(x), 50]).  At least
+                        one of <code class="docutils literal notranslate"><span
+                        class="pre">x0</span></code> and <code class="docutils literal notranslate"><span class="pre">N</span></code> must be <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+                        <code class="docutils literal notranslate"><span class="pre">x0</span></code> may also be a scalar.
+                    </p></li>
+                    <li><p>
+                            <strong>N</strong> (<em>int</em>) – Default
+                            <code class="docutils literal notranslate"> <span class="pre">None</span></code>.
+                            Number of <code class="docutils literal notranslate"><span class="pre">x0</span></code> values to
+                            calculate if <code class="docutils literal notranslate"><span class="pre">x0</span></code> is
+                            not specified. At least one of <code class="docutils literal notranslate"><span class="pre">x0</span></code> and
+                            <code class="docutils literal notranslate"><span class="pre">N</span></code> must be <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+                    </p></li>
+                    <li><p>
+                            <strong>h</strong> (<em>str</em><em> or </em><em>float</em>) –
+                            Defaults to None (Silverman’s rule of thumb).
+                            Bandwidth for kernel. May pass a float
+                            or any of the following for Silverman’s rule of thumb:
+                            <code class="docutils literal notranslate"><span class="pre">'silverman'</span></code>, <code class="docutils literal notranslate"><span class="pre">'thumb'</span></code>, <code class="docutils literal notranslate"><span class="pre">'rot'</span></code>.
+                    </p></li>
+                    <li><p>
+                            <strong>kernel</strong> (<em>str</em>) – <p>Type of kernel to be used. Options are:</p>
+                            <ul>
+                            <li><p><code class="docutils literal notranslate"><span class="pre">'epan'</span></code>, Epanechnikov (default)</p></li>
+                            <li><p><code class="docutils literal notranslate"><span class="pre">'unif'</span></code>, Uniform</p></li>
+                            <li><p><code class="docutils literal notranslate"><span class="pre">'tria'</span></code>, Triangle</p></li>
+                            </ul>
+                    </p></li>
+                    <li><p>
+                            <strong>wt</strong> (<em>array-like</em>) – Weights. Must be same length as <code class="docutils literal notranslate"><span class="pre">x</span></code>.
+                    </p></li>
+                </ul>
+                </dd>
+        <dt class="field-odd">Returns</dt>
+            <dd class="field-odd">
+            <p>
+                A tuple containing
+                    <ul class="simple">
+                        <li><p>
+                                <strong>x0</strong> (<em>float or array</em>) - Points are which kernel is estimated. If <code class="docutils literal notranslate"><span class="pre">x0</span></code> is passed explicitly, this will be the same.
+                        </p></li>
+                        <li><p>
+                                <strong>f_hat</strong> (<em>float or array</em>) - Estimated kernel density at point(s) <code class="docutils literal notranslate"><span class="pre">x0</span></code>.
+                        </p></li>
+                        <li><p>
+                                <strong>est_stats</strong> (<em>dict</em>) - Contains bandwidth and kernel name.
+                        </p></li>
+                    </ul>
+            </p>
+            </dd>
+        <dt class="field-even">Return type</dt>
+            <dd class="field-even"><p>tuple</p></dd>
+    </dl>
+    </dd>
 </dl>
-</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>tuple</p>
-</dd>
-</dl>
-</dd></dl>
 
 <dl class="function">
 <dt id="econtools.metrics.llr">
@@ -865,15 +885,14 @@ least one of <code class="docutils literal notranslate"><span class="pre">x0</sp
 <li><p><strong>h</strong> (<em>str</em><em> or </em><em>float</em>) – Defaults to None (Silverman’s rule of thumb).
 Bandwidth for kernel. May pass a float or any of the following for
 Silverman’s rule of thumb: <code class="docutils literal notranslate"><span class="pre">'silverman'</span></code>, <code class="docutils literal notranslate"><span class="pre">'thumb'</span></code>, <code class="docutils literal notranslate"><span class="pre">'rot'</span></code>.</p></li>
-<li><p><strong>kernel</strong> (<em>str</em>) – <p>Type of kernel to be used. Options
-are:</p>
-<blockquote>
+<li><p><strong>kernel</strong> (<em>str</em>) – Type of kernel to be used. Options
+are:
 <div><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">'epan'</span></code>, Epanechnikov (default)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'unif'</span></code>, Uniform</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'tria'</span></code>, Triangle</p></li>
 </ul>
-</div></blockquote>
+</div>
 </p></li>
 <li><p><strong>degree</strong> (<em>int</em>) – Defaults to 1. Degree of polynomial to use in local
 regression.</p></li>
